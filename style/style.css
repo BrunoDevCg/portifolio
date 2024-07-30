@@ -45,7 +45,7 @@ main {
 }
 
 .section {
-    padding: 60px 0;
+    padding: 60px 20px; /* Adiciona algum espaço nas laterais para evitar que o conteúdo grude nas bordas da tela */
     text-align: center;
 }
 
@@ -59,29 +59,34 @@ main {
     text-align: center;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 .about-details {
     display: flex;
+    flex-direction: column; /* Adiciona flex-direction: column para ajustar melhor o layout com a digitação */
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 20px;
+    max-width: 100%; /* Ajusta a largura máxima para a largura do container */
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse o container */
 }
 
 .about-photo {
     border-radius: 50%;
-    margin-right: 20px;
+    margin-bottom: 20px; /* Ajuste o espaçamento para que a foto não fique grudada no texto */
     width: 150px;
     height: 150px;
     object-fit: cover;
 }
 
 .about-text {
-    max-width: 600px;
+    max-width: 100%; /* Ajusta a largura máxima para o container */
     text-align: center;
 }
 
+/* Seção dos projetos */
 .projects {
     background-color: #eaeaea;
 }
@@ -128,7 +133,7 @@ main {
 }
 
 .btn-home {
-    max-width: 25px;
+    max-width: 35px;
 }
 
 #back-to-top {
@@ -150,7 +155,7 @@ main {
 }
 
 .dark-theme header {
-    background-color: #ffffff8a;
+    background-color: #ffffff;
 }
 
 .dark-theme .about {
@@ -163,4 +168,31 @@ main {
 
 .dark-theme nav ul li a, .dark-theme nav ul li button {
     color: #000000;
+}
+
+/* Efeito de digitação */
+.typing-effect {
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden; /* Esconde o texto que ainda não foi digitado */
+    white-space: pre-wrap; /* Permite quebra de linha e preserva espaços */
+    border-right: 3px solid #333; /* Cursor de digitação */
+    animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+    font-size: 1.2em; /* Tamanho da fonte do texto com efeito de digitação */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    word-wrap: break-word; /* Quebra palavras longas */
+    text-align: center; /* Alinha o texto ao centro */
+    max-width: 100%; /* Ajusta a largura máxima para o container */
+    margin: 0 auto; /* Centraliza o texto */
+}
+
+/* Animação de digitação */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Animação do cursor de digitação */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #333; }
 }

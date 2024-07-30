@@ -59,3 +59,23 @@ document.addEventListener('DOMContentLoaded', function() {
 function openProject(url) {
     window.open(url, '_blank');
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const typingElements = document.querySelectorAll('.typing-effect');
+    
+    typingElements.forEach(element => {
+        const text = element.innerText;
+        element.innerHTML = ''; // Limpa o conteúdo original
+        let index = 0;
+        
+        function type() {
+            if (index < text.length) {
+                element.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(type, 100); // Velocidade da digitação (em milissegundos)
+            }
+        }
+        
+        type();
+    });
+});
