@@ -5,6 +5,30 @@ body {
     box-sizing: border-box;
 }
 
+.section {
+    padding: 60px 20px;
+    text-align: center; /* Centraliza o conteúdo dentro da seção */
+}
+
+
+.content {
+    max-width: 1000px; /* Limita a largura do container */
+    margin: 0 auto; /* Centraliza horizontalmente o container */
+}
+
+.intro-text {
+    text-align: left; /* Alinha o texto à esquerda dentro do container */
+    line-height: 1.6; /* Ajusta o espaçamento entre linhas */
+}
+
+.subheading {
+    font-size: 1.2em; /* Ajusta o tamanho das subcategorias */
+    font-weight: bold; /* Destaca as subcategorias */
+    margin-top: 20px; /* Espaço acima das subcategorias */
+    display: block; /* Faz com que o texto da subcategoria seja exibido em uma nova linha */
+}
+
+
 header {
     background-color: #aaaaaa;
     color: #fff;
@@ -16,7 +40,7 @@ header {
     z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
 }
 
-/* Ajuste da barra de navegação para que fique centralizada e visível */
+/* Menu superior padrão para telas maiores */
 nav ul {
     list-style: none;
     margin: 0;
@@ -44,10 +68,35 @@ main {
     padding-top: 60px; /* Ajuste o valor conforme a altura do cabeçalho fixo */
 }
 
-.section {
-    padding: 60px 20px; /* Adiciona algum espaço nas laterais para evitar que o conteúdo grude nas bordas da tela */
-    text-align: center;
+/* Ajustes para o cabeçalho e menu inferior em dispositivos móveis */
+@media (max-width: 768px) {
+    header {
+        position: fixed;
+        bottom: 0;
+        top: auto; /* Remove a posição do topo */
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: space-around; /* Distribui os itens igualmente */
+    }
+
+    nav ul li {
+        margin: 0; /* Remove a margem lateral em dispositivos móveis */
+    }
+
+    nav ul li a, nav ul li button {
+        font-size: 14px; /* Ajuste o tamanho da fonte para dispositivos móveis */
+    }
+
+    /* Ajuste o padding superior do conteúdo principal para evitar sobreposição com o menu inferior */
+    main {
+        padding-top: 20px;
+        padding-bottom: 60px; /* Ajuste o valor conforme a altura do cabeçalho inferior */
+    }
 }
+
+
 
 .about {
     background-color: #f4f4f4;
@@ -118,6 +167,13 @@ main {
     margin-bottom: 15px; /* Espaçamento abaixo da imagem */
 }
 
+.project-image-memoria {
+    width: 75%; /* Faz com que a imagem ocupe toda a largura do card */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 8px; /* Arredonda os cantos da imagem */
+    margin-bottom: 15px; /* Espaçamento abaixo da imagem */
+}
+
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
@@ -150,12 +206,16 @@ main {
 }
 
 .dark-theme {
-    background-color: #202020;
+    background-color: #0e0e0ee8;
     color: #ffffff;
 }
 
 .dark-theme header {
     background-color: #ffffff;
+}
+
+.dark-theme .home {
+    background-color: #000000c7;
 }
 
 .dark-theme .about {
