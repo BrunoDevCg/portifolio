@@ -10,10 +10,9 @@
     <header class="header">
         <nav class="navbar">            
             <ul class="nav-links">
-                <li><a href="#home" id="home-link">Home</a></li>
-                <li><a href="#about" id="about-link">Sobre Mim</a></li>
-                <li><a href="#projects" id="projects-link">Projetos</a></li>
-                <li><button id="theme-toggle">Tema Escuro</button></li>
+                <li><a href="#home" id="home-link" ><img src="img/botao-home-para-interface.png" alt="botao Home" class="btn-home" ></a></li>
+                <li><a href="#about" id="about-link"><img src="img/usuario-de-perfil.png" alt="botao Home" class="btn-home" ></a></li>
+                <li><a href="#projects" id="projects-link"><img src="img/lancamento-do-projeto.png" alt="botao Home" class="btn-home" ></a></li>                
             </ul>
         </nav>
     </header>
@@ -21,15 +20,15 @@
         <section id="home" class="section home">
             <div class="content">
                 <h1>Seja Bem Vindo</h1>
-                <p>Olá, me chamo Bruno, um desenvolvedor web curioso e sempre em busca de mais.</p>
+                <img src="img/perfil.jpg" alt="Minha Foto" class="about-photo">
+                <p>Olá, me chamo Bruno, tenho 28 anos, Casado, iniciando no desenvolvimento web.</p>
             </div>
         </section>
         <section id="about" class="section about">
-            <div class="content about-content">
-                <h2>Sobre Mim</h2>
+            <div class="content about-content">                
                 <div class="about-details">
-                    <img src="img/perfil.jpg" alt="Minha Foto" class="about-photo">
-                    <p>Me chamo Bruno, tenho 28 anos, Casado, trabalho como desenvolvedor, e atualmente cursando Analise de sistemas na UCDB - Universidade Católica Dom Bosco, procurando crescer cada vez mais na carreira, e em busca de coisas novas.</p>                
+                    <h2>Sobre Mim</h2>
+                    <p>Atualmente trabalho como desenvolvedor, cursando Analise de sistemas na UCDB - Universidade Católica Dom Bosco de Mato Grosso Do Sul, procurando crescer cada vez mais na carreira, e em busca de coisas novas.</p>                
                 </div>
             </div>
         </section>
@@ -40,7 +39,7 @@
                     <div class="project-card" onclick="openProject('https://brunodevcg.github.io/jogodamemoria/')">
                         <img src="img/cerebro.png" alt="Jogo da Memoria" class="project-image">
                         <h3>Jogo Da Memoria</h3>
-                        <p>Criado em Html, CSS e JavaScript.</p>                        
+                        <p>Html, CSS e JavaScript.</p>                        
                     </div>
                     <div class="project-card">
                         <h3>Projeto 2</h3>
@@ -63,7 +62,7 @@
         </section>
     </main>
     <footer class="footer">
-        <p>&copy; 2024 Todos os direitos reservados.</p>
+        <p>&copy; 2024 Bruno Victor. Todos os direitos reservados.</p>
     </footer>
     <button id="back-to-top">Topo</button>
     <script src="javascript/script.js"></script>

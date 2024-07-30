@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #aaaaaa;
     color: #fff;
     padding: 10px 0;
     text-align: center;
@@ -30,7 +30,7 @@ nav ul li {
 }
 
 nav ul li a, nav ul li button {
-    color: #fff;
+    color: #949494;
     text-decoration: none;
     background: none;
     border: none;
@@ -57,6 +57,8 @@ main {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .about-details {
@@ -77,7 +79,7 @@ main {
 
 .about-text {
     max-width: 600px;
-    text-align: left;
+    text-align: center;
 }
 
 .projects {
@@ -87,20 +89,28 @@ main {
 .project-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    gap: 20px; /* Espaçamento entre os cards */
+    justify-content: center; /* Centraliza os cards horizontalmente */
 }
 
 .project-card {
-    background-color: #000000;
-    border: 1px solid #363636;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 300px;
-    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo dentro do card */
+    text-align: center; /* Centraliza o texto dentro do card */
+    border: 1px solid #ddd; /* Adiciona uma borda para visualização */
+    border-radius: 8px; /* Arredonda os cantos do card */
+    padding: 20px; /* Espaçamento interno do card */
+    width: 250px; /* Ajuste a largura do card conforme necessário */
     transition: transform 0.3s, box-shadow 0.3s;
-    text-align: left;
+    cursor: pointer;
+}
+
+.project-image {
+    width: 100%; /* Faz com que a imagem ocupe toda a largura do card */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 8px; /* Arredonda os cantos da imagem */
+    margin-bottom: 15px; /* Espaçamento abaixo da imagem */
 }
 
 .project-card:hover {
@@ -117,9 +127,8 @@ main {
     margin: 0.5em 0 0;
 }
 
-.project-image {
-    width: 100%;
-    border-radius: 8px;
+.btn-home {
+    max-width: 25px;
 }
 
 #back-to-top {
@@ -136,22 +145,22 @@ main {
 }
 
 .dark-theme {
-    background-color: #222;
-    color: #ccc;
+    background-color: #202020;
+    color: #ffffff;
 }
 
 .dark-theme header {
-    background-color: #444;
+    background-color: #ffffff8a;
 }
 
 .dark-theme .about {
-    background-color: #333;
+    background-color: #131313;
 }
 
 .dark-theme .projects {
-    background-color: #444;
+    background-color: #000000;
 }
 
 .dark-theme nav ul li a, .dark-theme nav ul li button {
-    color: #ccc;
+    color: #000000;
 }
