@@ -1,0 +1,226 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #aaaaaa;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed; /* Fixa o cabeçalho no topo */
+    top: 0;
+    width: 100%; /* Garante que o cabeçalho ocupe toda a largura da página */
+    z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
+}
+
+/* Menu superior padrão para telas maiores */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a, nav ul li button {
+    color: #949494;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Espaçamento superior do conteúdo principal para não ficar escondido atrás do cabeçalho fixo */
+main {
+    padding: 20px;
+    padding-top: 60px; /* Ajuste o valor conforme a altura do cabeçalho fixo */
+}
+
+/* Ajustes para o cabeçalho e menu inferior em dispositivos móveis */
+@media (max-width: 768px) {
+    header {
+        position: fixed;
+        bottom: 0;
+        top: auto; /* Remove a posição do topo */
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: space-around; /* Distribui os itens igualmente */
+    }
+
+    nav ul li {
+        margin: 0; /* Remove a margem lateral em dispositivos móveis */
+    }
+
+    nav ul li a, nav ul li button {
+        font-size: 14px; /* Ajuste o tamanho da fonte para dispositivos móveis */
+    }
+
+    /* Ajuste o padding superior do conteúdo principal para evitar sobreposição com o menu inferior */
+    main {
+        padding-top: 20px;
+        padding-bottom: 60px; /* Ajuste o valor conforme a altura do cabeçalho inferior */
+    }
+}
+
+.section {
+    padding: 60px 20px; /* Adiciona algum espaço nas laterais para evitar que o conteúdo grude nas bordas da tela */
+    text-align: center;
+}
+
+.about {
+    background-color: #f4f4f4;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.about-details {
+    display: flex;
+    flex-direction: column; /* Adiciona flex-direction: column para ajustar melhor o layout com a digitação */
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    max-width: 100%; /* Ajusta a largura máxima para a largura do container */
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse o container */
+}
+
+.about-photo {
+    border-radius: 50%;
+    margin-bottom: 20px; /* Ajuste o espaçamento para que a foto não fique grudada no texto */
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.about-text {
+    max-width: 100%; /* Ajusta a largura máxima para o container */
+    text-align: center;
+}
+
+/* Seção dos projetos */
+.projects {
+    background-color: #eaeaea;
+}
+
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espaçamento entre os cards */
+    justify-content: center; /* Centraliza os cards horizontalmente */
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo dentro do card */
+    text-align: center; /* Centraliza o texto dentro do card */
+    border: 1px solid #ddd; /* Adiciona uma borda para visualização */
+    border-radius: 8px; /* Arredonda os cantos do card */
+    padding: 20px; /* Espaçamento interno do card */
+    width: 250px; /* Ajuste a largura do card conforme necessário */
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.project-image {
+    width: 100%; /* Faz com que a imagem ocupe toda a largura do card */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 8px; /* Arredonda os cantos da imagem */
+    margin-bottom: 15px; /* Espaçamento abaixo da imagem */
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+    margin-top: 10px;
+    font-size: 1.5em;
+}
+
+.project-card p {
+    margin: 0.5em 0 0;
+}
+
+.btn-home {
+    max-width: 25px;
+}
+
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dark-theme {
+    background-color: #202020;
+    color: #ffffff;
+}
+
+.dark-theme header {
+    background-color: #ffffff;
+}
+
+.dark-theme .about {
+    background-color: #131313;
+}
+
+.dark-theme .projects {
+    background-color: #000000;
+}
+
+.dark-theme nav ul li a, .dark-theme nav ul li button {
+    color: #000000;
+}
+
+/* Efeito de digitação */
+.typing-effect {
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden; /* Esconde o texto que ainda não foi digitado */
+    white-space: pre-wrap; /* Permite quebra de linha e preserva espaços */
+    border-right: 3px solid #333; /* Cursor de digitação */
+    animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+    font-size: 1.2em; /* Tamanho da fonte do texto com efeito de digitação */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    word-wrap: break-word; /* Quebra palavras longas */
+    text-align: center; /* Alinha o texto ao centro */
+    max-width: 100%; /* Ajusta a largura máxima para o container */
+    margin: 0 auto; /* Centraliza o texto */
+}
+
+/* Animação de digitação */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Animação do cursor de digitação */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #333; }
+}
