@@ -92,18 +92,18 @@ main {
 
 /* Aplicar imagem específica para cada card */
 .card.card-sobre-mim {
-    background-image: url('img/holder.jpg');
+    background-image: url('portifolio/img/holder.jpg');
 }
 
 .card.card-projetos {
-    background-image: url('img/foguete.png');
+    background-image: url('portifolio/img/foguete.png');
 }
 
 .card.card-competencias {
-    background-image: url('img/competencias.jpg');
+    background-image: url('portifolio/img/competencias.jpg');
 }
 .card.card-contato {
-    background-image: url('img/contato.jpg');
+    background-image: url('portifolio/img/contato.jpg');
 }
 
 /* Grid de projetos dentro do card de projetos */
