@@ -2,13 +2,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('theme-toggle');
     const backToTop = document.getElementById('back-to-top');
 
+
+        
     // Verificar preferência de tema do usuário no localStorage
     const currentTheme = localStorage.getItem('theme');
     if (currentTheme) {
         document.body.classList.add(currentTheme);
-        if (currentTheme === 'dark-theme') {
-            themeToggle.textContent = 'Tema Claro';
-        }
+        themeToggle.textContent = currentTheme === 'dark-theme' ? 'Tema Claro' : 'Tema Escuro';
     } else {
         // Definir tema escuro como padrão
         document.body.classList.add('dark-theme');
@@ -31,11 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Show/hide back-to-top button
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 200) {
-            backToTop.style.display = 'block';
-        } else {
-            backToTop.style.display = 'none';
-        }
+        backToTop.style.display = window.scrollY > 200 ? 'block' : 'none';
     });
 
     // Scroll to sections
@@ -60,6 +56,7 @@ function openProject(url) {
     window.open(url, '_blank');
 }
 
+// Efeito de digitação
 document.addEventListener('DOMContentLoaded', () => {
     const typingElements = document.querySelectorAll('.typing-effect');
     
@@ -77,5 +74,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         type();
+    });
+});
+
+window.addEventListener('scroll', function() {
+    const backToTopButton = document.getElementById('back-to-top');
+    if (window.scrollY > 300) { // Mostrar botão após rolar 300px
+        backToTopButton.style.display = 'block';
+    } else {
+        backToTopButton.style.display = 'none';
+    }
+});
+
+// Função para rolar a página para o topo quando o botão for clicado
+document.getElementById('back-to-top').addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
     });
 });
